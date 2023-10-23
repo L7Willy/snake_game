@@ -15,8 +15,6 @@ WINDOW_SIZE = (500, 550)
 
 FONT = pygame.font.SysFont('arial', 32)
 
-PATH = r'C:\Users\William Geyer\source\repos\snake_game'
-
 
 class Orientation:
     VERTICAL = 0
@@ -35,9 +33,9 @@ class Square:
         self.x = x
         self.y = y
         if not food:
-            self.img = pygame.image.load(os.path.join(PATH, 'imgs', 'square.png')).convert()
+            self.img = pygame.image.load(os.path.join('imgs', 'square.png')).convert()
         else:
-            self.img = pygame.image.load(os.path.join(PATH, 'imgs', 'food.png')).convert()
+            self.img = pygame.image.load(os.path.join('imgs', 'food.png')).convert()
         self.length = self.img.get_size()[0]
 
 
@@ -81,9 +79,9 @@ class GridLine:
                 self.grid[str((x, y))] = 0
 
         if orientation == Orientation.VERTICAL:
-            self.img = pygame.image.load(os.path.join(PATH, 'imgs', 'vertical_grid_line.png'))
+            self.img = pygame.image.load(os.path.join('imgs', 'vertical_grid_line.png'))
         else:
-            self.img = pygame.image.load(os.path.join(PATH, 'imgs', 'horizontal_grid_line.png'))
+            self.img = pygame.image.load(os.path.join('imgs', 'horizontal_grid_line.png'))
 
 
 def setup_game_window():
